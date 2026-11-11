@@ -90,18 +90,12 @@
       border: none;
       cursor: pointer;
       transition: background 0.3s;
+      display: inline-block;
     }
     .btn-primary:hover { background-color: var(--accent-hover); }
 
-    /* --- HERO IMAGE (UPDATE FOTO TRANSPARAN) --- */
-    .hero-image { 
-      flex: 1; 
-      display: flex; 
-      justify-content: center; 
-      position: relative; 
-    }
+    .hero-image { flex: 1; display: flex; justify-content: center; position: relative; }
     
-    /* Efek cahaya ungu di belakang foto */
     .hero-image::before {
       content: '';
       position: absolute;
@@ -110,7 +104,7 @@
       background: var(--accent-color);
       border-radius: 50%;
       filter: blur(90px);
-      opacity: 0.4; /* Sedikit lebih terang karena foto transparan */
+      opacity: 0.4;
       z-index: -1;
       top: 50%;
       left: 50%;
@@ -119,15 +113,13 @@
 
     .hero-image img {
       width: 100%;
-      max-width: 450px; /* Ukuran maksimal foto */
+      max-width: 450px;
       height: auto;
       object-fit: contain;
-      filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.3)); /* Bayangan ungu di foto */
+      filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.3));
     }
 
-    /* =========================================
-       TAHAP 2: ABOUT & SKILLS SECTION
-       ========================================= */
+    /* --- ABOUT & SKILLS SECTION --- */
     .about-skills {
       padding: 80px 8%;
       background-color: #0d1220;
@@ -200,7 +192,81 @@
       transition: width 1.5s ease-in-out;
     }
 
-    /* Responsive untuk HP */
+    /* --- PROJECTS SECTION --- */
+    .projects-section {
+      padding: 80px 8%;
+      background-color: var(--bg-color);
+    }
+
+    .projects-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .projects-header h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+      border-color: rgba(139, 92, 246, 0.4);
+    }
+
+    .project-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .project-content {
+      padding: 24px;
+    }
+
+    .project-content h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+
+    .project-content p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .project-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent-color);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.3s;
+    }
+
+    .project-link:hover {
+      color: var(--accent-hover);
+    }
+
+    /* --- RESPONSIVE (MOBILE) --- */
     @media (max-width: 900px) {
       .hero { flex-direction: column-reverse; text-align: center; padding-top: 40px; }
       .hero-text h1 { font-size: 40px; }
@@ -217,7 +283,6 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <nav>
     <div class="logo">
       <span>&lt;/&gt;</span> Ahmad Salim
@@ -226,11 +291,10 @@
       <li><a href="#" class="active">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#">Projects</a></li>
+      <li><a href="#projects">Projects</a></li>
     </ul>
   </nav>
 
-  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-text">
       <div class="hero-badge">I'M A CREATIVE DESIGNER</div>
@@ -244,14 +308,11 @@
     </div>
 
     <div class="hero-image">
-
       <img src="foto1-removebg-preview.png" alt="Foto Ahmad Salim">
     </div>
   </section>
 
   <section class="about-skills" id="about">
-    
-    <!-- ABOUT ME -->
     <div class="about-container">
       <div class="about-text">
         <span class="section-subtitle">About Me</span>
@@ -285,7 +346,6 @@
       </div>
     </div>
 
-    <!-- SKILLS -->
     <div class="skills-container" id="skills">
       <span class="section-subtitle">My Skills</span>
       <h2>Keahlian & Tools</h2>
@@ -317,7 +377,44 @@
         </div>
       </div>
     </div>
+  </section>
 
+  <section class="projects-section" id="projects">
+    <div class="projects-header">
+      <span class="section-subtitle">Featured Projects</span>
+      <h2>Beberapa Karya Saya</h2>
+    </div>
+
+    <div class="projects-grid">
+      
+      <div class="project-card">
+        <img src="karya1.webp" alt="Ilustrasi Mendaki" class="project-img">
+        <div class="project-content">
+          <h3>Ilustrasi Siluet Pendaki</h3>
+          <p>Desain siluet vektor (Adobe Illustrator) yang menggambarkan aktivitas mendaki gunung dengan nuansa outdoor.</p>
+          <a href="https://www.shutterstock.com/g/ad28sm?rid=436214855" target="_blank" class="project-link">Lihat Karya ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="karya2.webp" alt="Ilustrasi Buku" class="project-img">
+        <div class="project-content">
+          <h3>Ilustrasi Buku & Rak</h3>
+          <p>Kumpulan ilustrasi vektor dengan tema edukasi. Cocok digunakan untuk desain materi pembelajaran atau background presentasi.</p>
+          <a href="https://www.shutterstock.com/g/ad28sm?rid=436214855" target="_blank" class="project-link">Lihat Karya ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="karya3.webp" alt="Islamic Background Pattern" class="project-img">
+        <div class="project-content">
+          <h3>Islamic Seamless Pattern</h3>
+          <p>Desain pola berulang (seamless pattern) bertema Islami. Didesain khusus untuk kebutuhan background, kartu ucapan, atau packaging.</p>
+          <a href="https://www.shutterstock.com/g/ad28sm?rid=436214855" target="_blank" class="project-link">Lihat Karya ↗</a>
+        </div>
+      </div>
+
+    </div>
   </section>
 
 </body>
