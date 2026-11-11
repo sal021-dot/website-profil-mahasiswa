@@ -188,6 +188,7 @@
       height: 100%;
       background: linear-gradient(90deg, #8b5cf6, #3b82f6);
       border-radius: 10px;
+      /* Width awal 0 biar ada animasi pas di-scroll */
       width: 0; 
       transition: width 1.5s ease-in-out;
     }
@@ -266,6 +267,18 @@
       color: var(--accent-hover);
     }
 
+    /* --- ANIMASI SCROLL (FADE IN) --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* --- RESPONSIVE (MOBILE) --- */
     @media (max-width: 900px) {
       .hero { flex-direction: column-reverse; text-align: center; padding-top: 40px; }
@@ -314,7 +327,7 @@
 
   <section class="about-skills" id="about">
     <div class="about-container">
-      <div class="about-text">
+      <div class="about-text reveal">
         <span class="section-subtitle">About Me</span>
         <h2>Saya Ahmad Salim, mahasiswa Manajemen Informasi Komunikasi.</h2>
         <p>
@@ -322,7 +335,7 @@
         </p>
       </div>
 
-      <div class="stats-container">
+      <div class="stats-container reveal">
         <div class="stat-card">
           <div class="stat-icon">🎨</div>
           <div class="stat-number">70+</div>
@@ -347,75 +360,107 @@
     </div>
 
     <div class="skills-container" id="skills">
-      <span class="section-subtitle">My Skills</span>
-      <h2>Keahlian & Tools</h2>
+      <div class="reveal">
+        <span class="section-subtitle">My Skills</span>
+        <h2>Keahlian & Tools</h2>
+      </div>
 
-      <div class="skills-grid">
+      <div class="skills-grid reveal">
         <div class="skill-item">
           <div class="skill-info"><span>Photoshop</span><span>75%</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="75%"></div></div>
         </div>
         <div class="skill-item">
           <div class="skill-info"><span>Illustrator</span><span>80%</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="80%"></div></div>
         </div>
         <div class="skill-item">
           <div class="skill-info"><span>Canva</span><span>90%</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="90%"></div></div>
         </div>
         <div class="skill-item">
           <div class="skill-info"><span>CapCut</span><span>70%</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="70%"></div></div>
         </div>
         <div class="skill-item">
           <div class="skill-info"><span>Desain Grafis</span><span>85%</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="85%"></div></div>
         </div>
         <div class="skill-item">
           <div class="skill-info"><span>Manajemen Informasi</span><span>40%</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 40%;"></div></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="40%"></div></div>
         </div>
       </div>
     </div>
   </section>
 
   <section class="projects-section" id="projects">
-    <div class="projects-header">
+    <div class="projects-header reveal">
       <span class="section-subtitle">Featured Projects</span>
       <h2>Beberapa Karya Saya</h2>
     </div>
 
     <div class="projects-grid">
       
-      <div class="project-card">
+      <div class="project-card reveal">
         <img src="karya1.webp" alt="Ilustrasi Mendaki" class="project-img">
         <div class="project-content">
           <h3>Ilustrasi Siluet Pendaki</h3>
           <p>Desain siluet vektor (Adobe Illustrator) yang menggambarkan aktivitas mendaki gunung dengan nuansa outdoor.</p>
-          <a href="https://www.shutterstock.com/g/ad28sm?rid=436214855" target="_blank" class="project-link">Lihat Karya ↗</a>
+          <a href="https://www.shutterstock.com/image-vector/hiking-silhouette-vector-set-mountain-hiker-2580258779?trackingId=3bb83e0a-f3cb-4203-8e9f-c5b517c77e9e&listId=undefined" target="_blank" class="project-link">Lihat Karya ↗</a>
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card reveal">
         <img src="karya2.webp" alt="Ilustrasi Buku" class="project-img">
         <div class="project-content">
           <h3>Ilustrasi Buku & Rak</h3>
           <p>Kumpulan ilustrasi vektor dengan tema edukasi. Cocok digunakan untuk desain materi pembelajaran atau background presentasi.</p>
-          <a href="https://www.shutterstock.com/g/ad28sm?rid=436214855" target="_blank" class="project-link">Lihat Karya ↗</a>
+          <a href="https://www.shutterstock.com/image-vector/colorful-book-collection-illustration-vibrant-stacked-2600451119?trackingId=62675d1d-26c1-42cf-b5a2-f40d97d801eb&listId=undefined" target="_blank" class="project-link">Lihat Karya ↗</a>
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card reveal">
         <img src="karya3.webp" alt="Islamic Background Pattern" class="project-img">
         <div class="project-content">
           <h3>Islamic Seamless Pattern</h3>
           <p>Desain pola berulang (seamless pattern) bertema Islami. Didesain khusus untuk kebutuhan background, kartu ucapan, atau packaging.</p>
-          <a href="https://www.shutterstock.com/g/ad28sm?rid=436214855" target="_blank" class="project-link">Lihat Karya ↗</a>
+          <a href="https://www.shutterstock.com/image-vector/islamic-pattern-festive-elements-seamless-featuring-2599097201?trackingId=4bef0a19-f489-455c-85ec-bfa36ad2d568&listId=undefined" target="_blank" class="project-link">Lihat Karya ↗</a>
         </div>
       </div>
 
     </div>
   </section>
+
+  <!-- SCRIPT UNTUK ANIMASI SCROLL & BAR SKILL -->
+  <script>
+    // 1. Animasi muncul saat di-scroll
+    const reveals = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      const elementVisible = 100; // Muncul kalau udah masuk 100px dari bawah layar
+
+      reveals.forEach((reveal) => {
+        const elementTop = reveal.getBoundingClientRect().top;
+        if (elementTop < windowHeight - elementVisible) {
+          reveal.classList.add('active');
+          
+          // Kalau yang muncul adalah kotak skill, jalanin animasi bar-nya
+          if (reveal.classList.contains('skills-grid')) {
+            const bars = reveal.querySelectorAll('.skill-bar-fill');
+            bars.forEach(bar => {
+              bar.style.width = bar.getAttribute('data-width');
+            });
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    // Panggil sekali saat halaman pertama kali dibuka
+    revealOnScroll();
+  </script>
 
 </body>
 </html>
